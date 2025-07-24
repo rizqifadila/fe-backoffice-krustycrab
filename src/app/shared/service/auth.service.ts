@@ -28,6 +28,7 @@ private userSubject = new BehaviorSubject<any>(this.getUserFromStorage());
 
   logout() {
     localStorage.removeItem('BACKOFFICE_USERLOGIN');
+    localStorage.removeItem('BACKOFFICE_EMPLOYEES');
     this.userSubject.next(null);
   }
 

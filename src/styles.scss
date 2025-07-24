@@ -821,6 +821,95 @@ a {
   text-decoration: underline !important;
 }
 
+.button-filter {
+  height: 30px;
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: #00537f 1px solid;
+  padding: 0px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all ease-in-out 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-filter:hover {
+  background-color: #00537f  !important;
+  transition: all ease-in-out 0.2s;
+  color: #FFFFFF !important;
+}
+
+.button-filter[disabled] {
+  cursor: not-allowed; 
+  opacity: 0.5; 
+}
+
+// _____________________________________________ Tooltip varian
+.custom-tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-tooltip .tooltip-text {
+  visibility: hidden;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  transition: opacity 0.2s;
+
+  &.top-left {
+    bottom: 110%;
+    left: -30px;
+  }
+  &.top-right {
+    bottom: 110%;
+    left: 50px;
+  }
+  &.bottom-left {
+    top: 100%;
+    left: -30px;
+  }
+  &.bottom-right {
+    top: 100%;
+    left: 50px;
+  }
+  &.top-center {
+    bottom: 110%;
+    left: 50%;
+  }
+  &.bottom-center {
+    top: 110%;
+    left: 50%;
+  }
+
+  &.primary {
+    background-color: white;
+    border: $color-primary 1px solid;
+    color: $color-primary;
+  }
+  &.secondary {
+    background-color: white;
+    border: #ffd000 1px solid;
+    color: #d5b422;
+  }
+  &.tertiary {
+    background-color: white;
+    border: $color-tertiary 1px solid;
+    color: $color-tertiary;
+  }
+}
+
+.custom-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 // _____________________________________________ Login
 .layout-container {
@@ -908,4 +997,35 @@ input:-webkit-autofill:hover {
     width: 50px;
     object-fit: contain;
   }
+}
+
+
+
+
+
+
+.show-form-filter {
+  max-height: 350px; 
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.hide-form-filter {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in;
+}
+
+dialog {
+  overflow: hidden;
+  background-color: #aeb4b269;
+  border: unset;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.wrapper-dialog-confirmation {
+  height: 100%;
+  width: 100%;
+  position: relative;
 }

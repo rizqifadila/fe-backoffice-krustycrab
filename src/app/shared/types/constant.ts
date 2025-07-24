@@ -93,3 +93,18 @@ export const messagesValidation: ValidationErrors = {
     'Kolom %s harus memiliki setidaknya satu huruf kapital, satu huruf kecil, satu angka, dan satu karakter spesial.',
   confirmpassword: 'Kata sandi tidak cocok.'
 };
+
+export const itemsRowPerPage = [5, 10, 15, 20];
+export const selectedRowPerPage = 10;
+
+export const EmployeeStatusOptions = [
+  { value: 'ACTIVE', label: 'Active' },
+  { value: 'INACTIVE', label: 'Inactive' }
+];
+
+export const EmployeeGroupOptions = [
+  { value: 'FE', label: 'Frontend Team' },
+  { value: 'BE', label: 'Backend Team' },
+  { value: 'PM', label: 'Product Managers' },
+  { value: 'DA', label: 'Data Analysts' }
+];

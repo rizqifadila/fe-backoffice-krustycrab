@@ -1,4 +1,8 @@
+export interface EmployeeListDto {
+  employee: EmployeeDto[];
+}
 export interface EmployeeDto {
+  id: string;
   username: string;
   firstName: string;
   lastName: string;
@@ -8,5 +12,4 @@ export interface EmployeeDto {
   status: string;
   group: string;
   description: string;
-
 }

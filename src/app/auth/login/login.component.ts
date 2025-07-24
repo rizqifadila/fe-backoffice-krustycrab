@@ -33,8 +33,6 @@ export class LoginComponent implements OnInit {
   // _______________________________________________________ onLoad Function
   ngOnInit(): void {
     const isSessionInvalid = localStorage.getItem('BACKOFFICE_INVALID_SESSION');
-    console.log('isSessionInvalid', isSessionInvalid);
-    
     if (isSessionInvalid) {
       this.errorAlert = {
         statusCode: 401,

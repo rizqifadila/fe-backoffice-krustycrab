@@ -20,3 +20,15 @@ export interface ErrorAlertDto {
   statusCode: number;
   message: string;
 }
+
+export interface Paging {
+  page: number;
+  rowsPerPage: number;
+  totalRows: number;
+  totalPages: number;
+}
+
+export interface FilterSelectDto {
+  value: string;
+  label: string;
+}

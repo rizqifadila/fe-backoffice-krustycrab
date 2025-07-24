@@ -1,1 +1,221 @@
-<p>employee-list works!</p>
+<div class="d-flex flex-column mh-97 py-4">
+  <div class="col-12 border rounded-top">
+    <app-breadcrumb [forOf]="breadcrumbs"></app-breadcrumb>
+  </div>
+  <div class="col-12 border border-top-0">
+    <div class="d-flex flex-column">
+      <div class="col-12 p-3 d-flex flex-column flex-md-row">
+        <div class="col-12 col-md-8 col-lg-9 d-flex flex-column">
+          <label class="ff-poppins fs-24 fw-600 tc-primary ml-3 ml-md-4">
+              Employee Management
+          </label>
+          <span>
+            List data employee
+          </span>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 d-flex align-items-end justify-content-end">
+          <button routerLink="form" class="button-primary custom-tooltip rounded">
+            Add
+            <span class="tooltip-text top-center primary px-2 py-1 fw-600 fs-12">
+              Add Employee
+            </span>
+          </button>
+        </div>
+      </div>
+
+      @if (errorAlert && errorAlert.statusCode) {
+        <div class="col-12 px-3 mb-3">
+          <app-alert-error [error]="errorAlert"></app-alert-error>
+        </div>
+      }
+
+      <div class="col-12 px-3 d-flex flex-column flex-md-row justify-content-between mt-4">
+          <div class="col-12 col-md-6 col-lg-5 order-1 order-md-0">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="bi bi-search"></i>
+              </span>
+              <input 
+                type="text" 
+                [formControl]="termFilter" 
+                class="form-control" 
+                placeholder="Search here.." 
+                aria-label="Search" 
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-3 order-0 order-md-1 mb-2 mb-lg-0 d-flex justify-content-end">
+            <button (click)="showFilter()" class="button-filter custom-tooltip rounded">
+                <i class="bi bi-sliders"></i>
+                <span class="tooltip-text top-left primary px-2 py-1 fw-600 fs-12">
+                  {{ isShowFormFilter ? 'Close Form Filter' : 'Open Form Filter' }}
+                </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="{{ isShowFormFilter ? 'show-form-filter' : 'hide-form-filter' }}">
+          <div class="row px-3 mt-3">
+            <div class="col-12 col-md-6 col-lg-3 mb-2 mb-lg-0">
+              <label class="ff-poppins fs-14 fw-400 text-black ms-1">Status</label>
+              <ng-select
+                [items]="employeeStatusOptions"
+                [formControl]="employeeStatusFilter"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Pilih Status"
+                appendTo="body"
+                [multiple]="false"
+                [loading]="isEmployeeStatusLoading"
+                (change)="onChangeEmployeeStatus($event)"
+              >
+              </ng-select>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mb-2 mb-lg-0">
+              <label class="ff-poppins fs-14 fw-400 text-black ms-1">Group</label>
+              <ng-select
+                [items]="employeeGroupOptions"
+                [formControl]="employeeGroupFilter"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Pilih Group"
+                appendTo="body"
+                [multiple]="false"
+                [loading]="isEmployeeGroupLoading"
+                (change)="onChangeEmployeeGroup($event)"
+              >
+              </ng-select>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <hr/>
+        </div>
+
+        <div class="col-12 mb-3 px-3">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover ff-poppins">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th class="mw-15">Username</th>
+                  <th class="mw-15">First</th>
+                  <th class="mw-15">Last</th>
+                  <th class="mw-20">Email</th>
+                  <th class="mw-10">Birthdate</th>
+                  <th class="mw-15">Salary</th>
+                  <th class="mw-10">Status</th>
+                  <th class="mw-15">Group</th>
+                  <th class="mw-15">Description</th>
+                  <th class="text-center mw-15">Action</th>
+                </tr>
+              </thead>
+               @if (employeeByPagination && employeeByPagination.length > 0) {
+                <tbody>
+
+                  @for (employee of employeeByPagination; track $index) {
+                    <tr>
+                      <td>{{ $index + startRow }}</td>
+                      <td>{{ employee.username || '-' }}</td>
+                      <td>{{ employee.firstName || '-' }}</td>
+                      <td>{{ employee.lastName || '-' }}</td>
+                      <td>{{ employee.email || '-' }}</td>
+                      <td>{{ (employee.birthDate | date) || '-' }}</td>
+                      <td>{{ (employee.basicSalary.toString() | currency:'Rp. ':'symbol':'1.0-0') || '-' }}</td>
+                      <td class="ff-poppins align-middle fs-14 fw-400">
+                        @if (employee && employee.status === 'ACTIVE') {
+                          <span class="badge text-bg-success w-50">Active</span>
+                        } @else if (employee && employee.status === 'INACTIVE') {
+                          <span class="badge text-bg-danger w-50">Inactive</span>
+                        } @else {
+                          -
+                        }
+                      </td>
+                      <td>{{ maskingGroupEmployee[employee.group] || '-' }}</td>
+                      <td>{{ employee.description || '-' }}</td>
+                     <td class="d-flex flex-row justify-content-center">
+                        <a routerLink="form/{{ employee.id }}" class="pe-2 btn-light custom-tooltip cursor-pointer fs-20">
+                          <i class="bi bi-pencil-square text-muted"></i>
+                          <span class="tooltip-text top-left primary px-2 py-1 fw-600 fs-12">
+                            Edit Data
+                          </span>
+                        </a>
+                        <a (click)="onDeleteRow(employee)" class="pe-2 btn-light custom-tooltip cursor-pointer fs-20">
+                          <i class="bi bi-trash3 text-muted"></i>
+                          <span class="tooltip-text top-right secondary px-2 py-1 fw-600 fs-12">
+                            Delete Data
+                          </span>
+                        </a>
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+               } @else {
+                 <tbody>
+                   <tr>
+                     <td colspan="11" class="text-center">Data is empty..</td>
+                   </tr>
+                 </tbody>
+               }
+            </table>
+          </div>
+        </div>
+
+        <div class="col-12 mb-3 px-3 d-flex flex-column flex-lg-row">
+          <div class="col-12 col-lg-6 mb-3 align-self-end d-flex flex-column flex-lg-row align-items-center">
+              <div class="col-12 col-lg-2 px-0">
+                  showing
+              </div>
+              <div class="col pr-0 w-100">
+                <ng-select
+                  [items]="itemsRowPerPage"
+                  placeholder="10"
+                  [searchable]="true"
+                  [formControl]="selectRowsPerPage"
+                  [clearable]="true"
+                  (change)="onChangeRowsData($event)"
+                  >
+                </ng-select>
+              </div>
+              <div class="col-12 col-lg-4 ps-0 ps-lg-2">
+                data(s) from {{ pagingData && pagingData.totalRows ? pagingData.totalRows : 0}}
+              </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            @if (pagingData && pagingData.totalPages > 1) {
+              <nav aria-label="Page navigation" class="d-flex justify-content-end">
+                <ul class="pagination">
+                  <li class="page-item" [class.disabled]="currentPage === 1">
+                    <button class="page-link" (click)="goToPage(1)">First</button>
+                  </li>
+              
+                  @for (page of pages; track $index) {
+                    <li class="page-item" [class.active]="currentPage === page">
+                      <button class="page-link" 
+                              *ngIf="page !== -1" 
+                              (click)="goToPage(page)">
+                        {{ page }}
+                      </button>
+                      <span class="page-link disabled" *ngIf="page === -1">...</span>
+                    </li>
+                  }
+              
+                  <li class="page-item" [class.disabled]="currentPage === pagingData.totalPages">
+                    <button class="page-link" (click)="goToPage(pagingData.totalPages)">Last</button>
+                  </li>
+                </ul>
+              </nav>
+            }
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <app-dialog-confirmation
+    #dialogConfirmation
+    (onConfirm)="onDeleteMenuConfirm($event)"
+  ></app-dialog-confirmation>
+  <app-loading *ngIf="isLoading"></app-loading>
+</div>
