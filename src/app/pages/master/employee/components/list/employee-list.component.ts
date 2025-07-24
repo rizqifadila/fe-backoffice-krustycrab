@@ -83,7 +83,7 @@ export class EmployeeListComponent implements OnInit {
 
   // __________________________________________ onLoad Function
   ngOnInit(): void {
-    this.title.setTitle(`BackOffice Krusty Crab - Employee Management`);
+    this.title.setTitle(`Backoffice Krusty Crab - Employee Management`);
     this.activatedRoute.queryParams.subscribe({
       next: (params: Params) => {
         const { term, rowsPerPage, status, group, page } = params;
@@ -91,7 +91,7 @@ export class EmployeeListComponent implements OnInit {
         if (rowsPerPage) this.selectRowsPerPage.patchValue(+rowsPerPage);
         if (status) this.employeeStatusFilter.patchValue(status);
         if (group) this.employeeGroupFilter.patchValue(group);
-        if (page) this.currentPage = page;
+        if (page) this.currentPage = +page;
         if (status || group) this.isShowFormFilter = true;
         
         this.params = this.payloadParams(params);
@@ -108,8 +108,12 @@ export class EmployeeListComponent implements OnInit {
   }
 
   loadData() {
-    this.stored = this.employeeService.getAllEmployee();
-    this.watchFilterList();  
+    this.isLoading = true;
+    setTimeout(() => {
+      this.stored = this.employeeService.getAllEmployee();
+      this.watchFilterList();
+      this.isLoading = false;
+    }, 700);
   }
 
   watchFilterList(): void {
@@ -164,8 +168,7 @@ export class EmployeeListComponent implements OnInit {
       rowsPerPage: +this.params['rowsPerPage'] || selectedRowPerPage,
       totalRows: this.employees.length,
       totalPages: totalPages
-    };
-    
+    };    
     this.startRow = (current - 1) * (+this.params['rowsPerPage'] || selectedRowPerPage) + 1;
   }
 
@@ -237,13 +240,18 @@ export class EmployeeListComponent implements OnInit {
     this.dialogConfirmation.openDialogue();
   }
 
-  onDeleteMenuConfirm(agree: boolean) {
+  onDeleteEmployeeConfirm(agree: boolean) {
     if (agree && this.selectedEmployee.id) {
       this.isLoading = true;
        setTimeout(() => {
         this.isLoading = false;
         this.employeeService.delete(this.selectedEmployee.id);
-        this.loadData();
+        if (this.pagingData && this.pagingData.totalPages > 1) {
+          this.loadData();
+        } else {
+          this.params['page'] = 1;
+          this.navigate();
+        }
       }, 500);
     }
   }
