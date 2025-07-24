@@ -1,0 +1,102 @@
+<div class="d-flex flex-column mh-97 py-4">
+  <div class="col-12 border rounded-top">
+    <app-breadcrumb [forOf]="breadcrumbs" [latestParams]="backQueryParams"></app-breadcrumb>
+  </div>
+  <div class="col-12 border border-top-0">
+    <div class="d-flex flex-column">
+      <div class="col-12 d-flex flex-column mt-4 px-3">
+        <label class="ff-poppins fs-24 fw-600 tc-primary ml-3 ml-lg-4">
+          Employee Detail
+        </label>
+      </div>
+
+      <div class="col-12 px-3 mt-2 d-flex flex-column flex-lg-row">
+        <div class="col-12 col-lg-3 d-flex justify-content-center">
+          <div class="avatar-wrapper">
+            <img [src]="avatar" alt="avatar-employee" class="avatar">
+          </div>
+        </div>
+        <div class="flex-grow-1 d-flex flex-wrap px-3">
+          <div class="d-inline-flex ps-2 pe-4 mb-3 border-2 ps-2" style="border-bottom: 1px #FED316 solid;">
+            <label for="personalData" class="ff-poppins fs-20 fw-600 text-muted ms-1">Personal Data </label>
+          </div>
+          
+          @if (employee) {
+            <div class="col-12 mb-2 p-2 bg-color-tertiary rounded d-flex flex-column">
+              <label for="personalData" class="ff-poppins fs-12 fw-600 text-muted ms-1">Username </label>
+              <label for="personalData" class="ff-poppins fs-16 fw-400 text-muted ms-1">{{ employee.username || "-" }} </label>
+            </div>
+  
+            <div class="col-12 col-lg-6 mb-2 pe-0 pe-lg-1">
+              <div class="d-flex flex-column p-2 bg-color-tertiary rounded">
+                <label for="firstName" class="ff-poppins fs-12 fw-600 text-muted ms-1">Firstname </label>
+                <label for="firstName" class="ff-poppins fs-16 fw-400 text-muted ms-1">{{ employee.firstName || "-" }} </label>
+              </div>
+            </div>
+  
+            <div class="col-12 col-lg-6 mb-2 ps-0 ps-lg-1">
+              <div class="d-flex flex-column p-2 bg-color-tertiary rounded">
+                <label for="lastname" class="ff-poppins fs-12 fw-600 text-muted ms-1">Lastname </label>
+                <label for="lastname" class="ff-poppins fs-16 fw-400 text-muted ms-1">{{ employee.lastName || "-" }} </label>
+              </div>
+            </div>
+  
+            <div class="col-12 mb-2 p-2 bg-color-tertiary rounded d-flex flex-column">
+              <label for="email" class="ff-poppins fs-12 fw-600 text-muted ms-1">Email </label>
+              <label for="email" class="ff-poppins fs-16 fw-400 text-muted ms-1">{{ employee.email || "-" }} </label>
+            </div>
+  
+            <div class="col-12 col-lg-6 mb-2 pe-0 pe-lg-1">
+              <div class="d-flex flex-column p-2 bg-color-tertiary rounded">
+                <label for="birthDate" class="ff-poppins fs-12 fw-600 text-muted ms-1">BirthDate </label>
+                <label for="birthDate" class="ff-poppins fs-16 fw-400 text-muted ms-1">{{ employee.birthDate || "-" }} </label>
+              </div>
+            </div>
+  
+            <div class="col-12 col-lg-6 mb-2 ps-0 ps-lg-1">
+              <div class="d-flex flex-column p-2 bg-color-tertiary rounded">
+                <label for="basicSalary" class="ff-poppins fs-12 fw-600 text-muted ms-1">Salary </label>
+                <label for="basicSalary" class="ff-poppins fs-16 fw-400 text-muted ms-1">{{ (employee.basicSalary.toString() | currency:'Rp. ':'symbol':'1.0-0') || "-" }} </label>
+              </div>
+            </div>
+  
+            <div class="col-12 col-lg-6 mb-2 pe-0 pe-lg-1">
+              <div class="d-flex flex-column p-2 bg-color-tertiary rounded">
+                <label for="status" class="ff-poppins fs-12 fw-600 text-muted ms-1">Status </label>
+                @if (employee && employee.status === 'ACTIVE') {
+                  <span class="badge text-bg-success w-25">Active</span>
+                } @else if (employee && employee.status === 'INACTIVE') {
+                  <span class="badge text-bg-danger w-25">Inactive</span>
+                } @else {
+                  -
+                }
+              </div>
+            </div>
+  
+            <div class="col-12 col-lg-6 mb-2 ps-0 ps-lg-1">
+              <div class="d-flex flex-column p-2 bg-color-tertiary rounded">
+                <label for="group" class="ff-poppins fs-12 fw-600 text-muted ms-1">group </label>
+                <label for="group" class="ff-poppins fs-16 fw-400 text-muted ms-1">{{ maskingGroupEmployee[employee!.group] || "-" }} </label>
+              </div>
+            </div>
+  
+            <div class="col-12 mb-3 p-2 bg-color-tertiary rounded d-flex flex-column">
+              <label for="description" class="ff-poppins fs-12 fw-600 text-muted ms-1">Description </label>
+              <label for="description" class="ff-poppins fs-16 fw-400 text-muted ms-1">{{ employee.description || "-" }} </label>
+            </div>
+          } @else {
+            <div class="col-12 mb-3 p-2 bg-color-tertiary rounded d-flex flex-column">
+              <label for="description" class="ff-poppins fs-12 fw-600 text-muted ms-1">Memuat Data.. </label>
+            </div>
+          }
+      </div>
+    </div>
+
+    <div class="mb-3 d-flex flex-row-reverse me-3"> 
+        <a routerLink="/master/employee" [queryParams]="backQueryParams" class="button-back cursor-pointer ff-poppins fs-14 fw-600 me-3 align-self-end">
+        Back to list
+      </a>
+    </div>
+  </div>
+  <app-loading *ngIf="isLoading"></app-loading>
+</div>

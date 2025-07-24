@@ -7,6 +7,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { authGuard } from './shared/guard/auth.guard';
 import { EmployeeFormComponent } from './pages/master/employee/components/form/employee-form.component';
 import { EmployeeListComponent } from './pages/master/employee/components/list/employee-list.component';
+import { EmployeeDetailComponent } from './pages/master/employee/components/detail/employee-detail/employee-detail.component';
 
 export const routes: Routes = [
    {
@@ -42,6 +43,10 @@ export const routes: Routes = [
               {
                 path: 'form/:id',
                 component: EmployeeFormComponent,
+              },
+              {
+                path: 'detail/:id',
+                component: EmployeeDetailComponent,
               },
             ]
           },

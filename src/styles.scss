@@ -200,6 +200,24 @@ a {
     opacity: 100%;
     transition: all ease-out 0.2s;
   }
+
+  .avatar-wrapper {
+    height: 200px;
+    width: 70%;
+    margin-right: 15px;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .avatar {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
 }
 
 
@@ -217,14 +235,64 @@ a {
   .mobile-sidebar {
       display: none;
   }
-
         
 }
 
 
 @media (min-width: 576.98px) and (max-width: 991.98px) {
+  .avatar-wrapper {
+    height: 200px;
+    width: 50%;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .avatar {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
 }
-@media (min-width: 992px) and (max-width: 1199.98px) {
+@media (min-width: 992px) and (max-width: 1365.98px) {
+  .avatar-wrapper {
+    height: 180px;
+    width: 90%;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .avatar {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (min-width: 1366px) { 
+  .avatar-wrapper {
+    height: 300px;
+    width: 90%;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .avatar {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
 }
 
 // _____________________________________________ End: Responsive Class
@@ -902,6 +970,11 @@ a {
     background-color: white;
     border: $color-tertiary 1px solid;
     color: $color-tertiary;
+  }
+  &.danger {
+    background-color: white;
+    border: rgb(224, 24, 24) 1px solid;
+    color: rgb(224, 24, 24)
   }
 }
 
