@@ -1,59 +1,70 @@
-# FeBackoffice
+# Express Pagination API
+Ini adalah aplikasi backoffice menggunakan stack angular yang mendemonstrasikan user-login, menampilkan list data, pembuatan form input, mengimplementasikan pengambilan data dengan pagination, pencarian, dan penyortiran menggunakan file data dummy yang disimpan di local storage lalu diolah semua proses create, read, update, delete, filtering, serta pagination dari sisi frontend.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+## Fitur
 
-## Development server
+- **Login**: Login ke aplikasi menggunakan dummy.json lalu data akan di simpan di state menggunakan behavior subject dan local-storage
+- **List**: Menampilkan data dalam bentuk table list.
+- **Form**: Membuat form data input menggunakan formGroup.
+- **Filter Pencarian**: Mencari berdasarkan atribut karyawan (misalnya, username, nama depan, nama belakang).
+- **Filter Penyortiran**: Menyortir berdasarkan atribut karyawan (misalnya, abjad atau numerik).
+- **Filter Pagination**: Mengambil data dalam halaman dengan pengaturan `rowsPerPage` yang dapat disesuaikan.
 
-To start a local development server, run:
+## Prasyarat
 
+Pastikan Anda memiliki hal-hal berikut yang terinstal sebelum menjalankan proyek:
+
+- **Angular CLI**: Versi 19.2.8 atau lebih tinggi
+- **Node.js**: Versi 22.14.0 atau lebih tinggi.
+- **npm**: Node package manager (versi 10.9.2).
+
+## Instalasi
+
+### 1. Clone the repository
+
+Clone this repository to your local machine by running:
+
+```bash
+git clone https://github.com/rizqifadila/fe-backoffice-krustycrab.git
+```
+
+### 2. Clone the repository
+```bash
+cd fe-backoffice-krustycrab
+```
+
+### 3. Install dependencies
+```bash
+npm install
+```
+
+### 4. Menjalankan Project
 ```bash
 ng serve
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+atau
 ```bash
-ng generate component component-name
+npm run start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+## 🔐 Dummy User Login
 
-## Building
+Untuk keperluan pengujian aplikasi, tersedia beberapa akun dummy yang dapat digunakan untuk login. Berikut detailnya:
 
-To build the project run:
+| Username | Password     | Position | Photo                          |
+|----------|--------------|----------|--------------------------------|
+| `frets`  | `123456`     | Staff    | `assets/images/user.png`       |
+| `rizqi`  | `P@ssw0rd!!` | Manager  | `assets/images/user.png`       |
+| `edi`    | `P@ssw0rd`   | Staff    | `assets/images/user.png`       |
 
-```bash
-ng build
-```
+### 📥 Cara Login
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+1. Jalankan aplikasi.
+2. Arahkan ke halaman login (`/auth/login`).
+3. Masukkan salah satu kombinasi **username** dan **password** dari tabel di atas.
+4. Klik tombol **Login**.
 
-## Running unit tests
+> ✅ *Catatan: Semua user menggunakan foto profil default yang sama (`assets/images/user.png`).*
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
