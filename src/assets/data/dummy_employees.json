@@ -1,7 +1,7 @@
 {
   "employee": [
     {
-      "id": 1,
+      "id": "1",
       "username": "rizqi fadila",
       "firstName": "Justin",
       "lastName": "Poole",
@@ -13,7 +13,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "arzafin rizqi",
       "firstName": "Deborah",
       "lastName": "Watson",
@@ -25,7 +25,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "muhamad rizqi",
       "firstName": "David",
       "lastName": "Johnson",
@@ -37,7 +37,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 4,
+      "id": "4",
       "username": "rizqi fadila",
       "firstName": "Leslie",
       "lastName": "Jordan",
@@ -49,7 +49,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 5,
+      "id": "5",
       "username": "rizqi dwi",
       "firstName": "Erik",
       "lastName": "Ferguson",
@@ -61,7 +61,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 6,
+      "id": "6",
       "username": "rizqia putri",
       "firstName": "Christina",
       "lastName": "Case",
@@ -73,7 +73,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 7,
+      "id": "7",
       "username": "rizqi ukhwatun hasanah",
       "firstName": "Eric",
       "lastName": "Tanner",
@@ -85,7 +85,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 8,
+      "id": "8",
       "username": "rizqi indah pratiwi",
       "firstName": "Joseph",
       "lastName": "Allen",
@@ -97,7 +97,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 9,
+      "id": "9",
       "username": "rizqi syahrul fadila",
       "firstName": "Melissa",
       "lastName": "Baxter",
@@ -109,7 +109,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 10,
+      "id": "10",
       "username": "rizal fadila",
       "firstName": "Joseph",
       "lastName": "Benson",
@@ -121,7 +121,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 11,
+      "id": "11",
       "username": "rizal aja",
       "firstName": "Christopher",
       "lastName": "Williams",
@@ -133,7 +133,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 12,
+      "id": "12",
       "username": "kathrynsoto",
       "firstName": "Kathryn",
       "lastName": "Soto",
@@ -145,7 +145,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 13,
+      "id": "13",
       "username": "christinabrown",
       "firstName": "Christina",
       "lastName": "Brown",
@@ -157,7 +157,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 14,
+      "id": "14",
       "username": "kathrynjones",
       "firstName": "Kathryn",
       "lastName": "Jones",
@@ -169,7 +169,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 15,
+      "id": "15",
       "username": "brianbrown",
       "firstName": "Brian",
       "lastName": "Brown",
@@ -181,7 +181,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 16,
+      "id": "16",
       "username": "stephaniemarshall",
       "firstName": "Stephanie",
       "lastName": "Marshall",
@@ -193,7 +193,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 17,
+      "id": "17",
       "username": "kristinwilliams",
       "firstName": "Kristin",
       "lastName": "Williams",
@@ -205,7 +205,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 18,
+      "id": "18",
       "username": "kellymcfarland",
       "firstName": "Kelly",
       "lastName": "Mcfarland",
@@ -217,7 +217,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 19,
+      "id": "19",
       "username": "tonyataylor",
       "firstName": "Tonya",
       "lastName": "Taylor",
@@ -229,7 +229,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 20,
+      "id": "20",
       "username": "jamiereed",
       "firstName": "Jamie",
       "lastName": "Reed",
@@ -241,7 +241,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 21,
+      "id": "21",
       "username": "robertmartinez",
       "firstName": "Robert",
       "lastName": "Martinez",
@@ -253,7 +253,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 22,
+      "id": "22",
       "username": "crystalrosales",
       "firstName": "Crystal",
       "lastName": "Rosales",
@@ -265,7 +265,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 23,
+      "id": "23",
       "username": "justinbailey",
       "firstName": "Justin",
       "lastName": "Bailey",
@@ -277,7 +277,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 24,
+      "id": "24",
       "username": "davidmoore",
       "firstName": "David",
       "lastName": "Moore",
@@ -289,7 +289,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 25,
+      "id": "25",
       "username": "jenniferwillis",
       "firstName": "Jennifer",
       "lastName": "Willis",
@@ -301,7 +301,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 26,
+      "id": "26",
       "username": "teresarobinson",
       "firstName": "Teresa",
       "lastName": "Robinson",
@@ -313,7 +313,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 27,
+      "id": "27",
       "username": "vickiewilson",
       "firstName": "Vickie",
       "lastName": "Wilson",
@@ -325,7 +325,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 28,
+      "id": "28",
       "username": "kimberlyanderson",
       "firstName": "Kimberly",
       "lastName": "Anderson",
@@ -337,7 +337,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 29,
+      "id": "29",
       "username": "joshuaburnett",
       "firstName": "Joshua",
       "lastName": "Burnett",
@@ -349,7 +349,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 30,
+      "id": "30",
       "username": "michaelmendez",
       "firstName": "Michael",
       "lastName": "Mendez",
@@ -361,7 +361,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 31,
+      "id": "31",
       "username": "michaelshaffer",
       "firstName": "Michael",
       "lastName": "Shaffer",
@@ -373,7 +373,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 32,
+      "id": "32",
       "username": "michellechapman",
       "firstName": "Michelle",
       "lastName": "Chapman",
@@ -385,7 +385,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 33,
+      "id": "33",
       "username": "jamesolsen",
       "firstName": "James",
       "lastName": "Olsen",
@@ -397,7 +397,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 34,
+      "id": "34",
       "username": "danielgutierrez",
       "firstName": "Daniel",
       "lastName": "Gutierrez",
@@ -409,7 +409,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 35,
+      "id": "35",
       "username": "aaronnoble",
       "firstName": "Aaron",
       "lastName": "Noble",
@@ -421,7 +421,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 36,
+      "id": "36",
       "username": "melissamalone",
       "firstName": "Melissa",
       "lastName": "Malone",
@@ -433,7 +433,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 37,
+      "id": "37",
       "username": "adamscott",
       "firstName": "Adam",
       "lastName": "Scott",
@@ -445,7 +445,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 38,
+      "id": "38",
       "username": "dannystokes",
       "firstName": "Danny",
       "lastName": "Stokes",
@@ -457,7 +457,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 39,
+      "id": "39",
       "username": "larrygomez",
       "firstName": "Larry",
       "lastName": "Gomez",
@@ -469,7 +469,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 40,
+      "id": "40",
       "username": "elizabethmills",
       "firstName": "Elizabeth",
       "lastName": "Mills",
@@ -481,7 +481,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 41,
+      "id": "41",
       "username": "audreyhiggins",
       "firstName": "Audrey",
       "lastName": "Higgins",
@@ -493,7 +493,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 42,
+      "id": "42",
       "username": "evankelly",
       "firstName": "Evan",
       "lastName": "Kelly",
@@ -505,7 +505,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 43,
+      "id": "43",
       "username": "deborahadams",
       "firstName": "Deborah",
       "lastName": "Adams",
@@ -517,7 +517,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 44,
+      "id": "44",
       "username": "sandrahenry",
       "firstName": "Sandra",
       "lastName": "Henry",
@@ -529,7 +529,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 45,
+      "id": "45",
       "username": "annettestevens",
       "firstName": "Annette",
       "lastName": "Stevens",
@@ -541,7 +541,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 46,
+      "id": "46",
       "username": "timothymathis",
       "firstName": "Timothy",
       "lastName": "Mathis",
@@ -553,7 +553,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 47,
+      "id": "47",
       "username": "michaelward",
       "firstName": "Michael",
       "lastName": "Ward",
@@ -565,7 +565,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 48,
+      "id": "48",
       "username": "stevenhaynes",
       "firstName": "Steven",
       "lastName": "Haynes",
@@ -577,7 +577,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 49,
+      "id": "49",
       "username": "gregoryconner",
       "firstName": "Gregory",
       "lastName": "Conner",
@@ -589,7 +589,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 50,
+      "id": "50",
       "username": "christophermartin",
       "firstName": "Christopher",
       "lastName": "Martin",
@@ -601,7 +601,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 51,
+      "id": "51",
       "username": "johnmorales",
       "firstName": "John",
       "lastName": "Morales",
@@ -613,7 +613,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 52,
+      "id": "52",
       "username": "josephhood",
       "firstName": "Joseph",
       "lastName": "Hood",
@@ -625,7 +625,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 53,
+      "id": "53",
       "username": "jenniferramirez",
       "firstName": "Jennifer",
       "lastName": "Ramirez",
@@ -637,7 +637,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 54,
+      "id": "54",
       "username": "samanthaalvarado",
       "firstName": "Samantha",
       "lastName": "Alvarado",
@@ -649,7 +649,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 55,
+      "id": "55",
       "username": "jennyschmidt",
       "firstName": "Jenny",
       "lastName": "Schmidt",
@@ -661,7 +661,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 56,
+      "id": "56",
       "username": "richardbenson",
       "firstName": "Richard",
       "lastName": "Benson",
@@ -673,7 +673,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 57,
+      "id": "57",
       "username": "jilljohnson",
       "firstName": "Jill",
       "lastName": "Johnson",
@@ -685,7 +685,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 58,
+      "id": "58",
       "username": "danielphillips",
       "firstName": "Daniel",
       "lastName": "Phillips",
@@ -697,7 +697,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 59,
+      "id": "59",
       "username": "caitlingross",
       "firstName": "Caitlin",
       "lastName": "Gross",
@@ -709,7 +709,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 60,
+      "id": "60",
       "username": "taylorsmith",
       "firstName": "Taylor",
       "lastName": "Smith",
@@ -721,7 +721,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 61,
+      "id": "61",
       "username": "jayperez",
       "firstName": "Jay",
       "lastName": "Perez",
@@ -733,7 +733,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 62,
+      "id": "62",
       "username": "rachellucas",
       "firstName": "Rachel",
       "lastName": "Lucas",
@@ -745,7 +745,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 63,
+      "id": "63",
       "username": "lisajones",
       "firstName": "Lisa",
       "lastName": "Jones",
@@ -757,7 +757,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 64,
+      "id": "64",
       "username": "jackhansen",
       "firstName": "Jack",
       "lastName": "Hansen",
@@ -769,7 +769,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 65,
+      "id": "65",
       "username": "jasonhowe",
       "firstName": "Jason",
       "lastName": "Howe",
@@ -781,7 +781,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 66,
+      "id": "66",
       "username": "marisakent",
       "firstName": "Marisa",
       "lastName": "Kent",
@@ -793,7 +793,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 67,
+      "id": "67",
       "username": "susanbooker",
       "firstName": "Susan",
       "lastName": "Booker",
@@ -805,7 +805,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 68,
+      "id": "68",
       "username": "brettsmith",
       "firstName": "Brett",
       "lastName": "Smith",
@@ -817,7 +817,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 69,
+      "id": "69",
       "username": "lindachang",
       "firstName": "Linda",
       "lastName": "Chang",
@@ -829,7 +829,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 70,
+      "id": "70",
       "username": "dylanbrown",
       "firstName": "Dylan",
       "lastName": "Brown",
@@ -841,7 +841,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 71,
+      "id": "71",
       "username": "lisaclark",
       "firstName": "Lisa",
       "lastName": "Clark",
@@ -853,7 +853,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 72,
+      "id": "72",
       "username": "tanyarodriguez",
       "firstName": "Tanya",
       "lastName": "Rodriguez",
@@ -865,7 +865,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 73,
+      "id": "73",
       "username": "emilylandry",
       "firstName": "Emily",
       "lastName": "Landry",
@@ -877,7 +877,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 74,
+      "id": "74",
       "username": "lawrenceross",
       "firstName": "Lawrence",
       "lastName": "Ross",
@@ -889,7 +889,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 75,
+      "id": "75",
       "username": "natashaweber",
       "firstName": "Natasha",
       "lastName": "Weber",
@@ -901,7 +901,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 76,
+      "id": "76",
       "username": "timothycarpenter",
       "firstName": "Timothy",
       "lastName": "Carpenter",
@@ -913,7 +913,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 77,
+      "id": "77",
       "username": "christophergreen",
       "firstName": "Christopher",
       "lastName": "Green",
@@ -925,7 +925,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 78,
+      "id": "78",
       "username": "emilypoole",
       "firstName": "Emily",
       "lastName": "Poole",
@@ -937,7 +937,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 79,
+      "id": "79",
       "username": "davidestrada",
       "firstName": "David",
       "lastName": "Estrada",
@@ -949,7 +949,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 80,
+      "id": "80",
       "username": "jeanperez",
       "firstName": "Jean",
       "lastName": "Perez",
@@ -961,7 +961,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 81,
+      "id": "81",
       "username": "alexandramoore",
       "firstName": "Alexandra",
       "lastName": "Moore",
@@ -973,7 +973,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 82,
+      "id": "82",
       "username": "amberjohnson",
       "firstName": "Amber",
       "lastName": "Johnson",
@@ -985,7 +985,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 83,
+      "id": "83",
       "username": "marythornton",
       "firstName": "Mary",
       "lastName": "Thornton",
@@ -997,7 +997,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 84,
+      "id": "84",
       "username": "gabriellehiggins",
       "firstName": "Gabrielle",
       "lastName": "Higgins",
@@ -1009,7 +1009,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 85,
+      "id": "85",
       "username": "nathanmorales",
       "firstName": "Nathan",
       "lastName": "Morales",
@@ -1021,7 +1021,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 86,
+      "id": "86",
       "username": "nicoledavis",
       "firstName": "Nicole",
       "lastName": "Davis",
@@ -1033,7 +1033,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 87,
+      "id": "87",
       "username": "bradleyandrade",
       "firstName": "Bradley",
       "lastName": "Andrade",
@@ -1045,7 +1045,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 88,
+      "id": "88",
       "username": "kaylataylor",
       "firstName": "Kayla",
       "lastName": "Taylor",
@@ -1057,7 +1057,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 89,
+      "id": "89",
       "username": "denisebuchanan",
       "firstName": "Denise",
       "lastName": "Buchanan",
@@ -1069,7 +1069,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 90,
+      "id": "90",
       "username": "benjaminfranklin",
       "firstName": "Benjamin",
       "lastName": "Franklin",
@@ -1081,7 +1081,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 91,
+      "id": "91",
       "username": "crystalscott",
       "firstName": "Crystal",
       "lastName": "Scott",
@@ -1093,7 +1093,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 92,
+      "id": "92",
       "username": "joshuawalls",
       "firstName": "Joshua",
       "lastName": "Walls",
@@ -1105,7 +1105,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 93,
+      "id": "93",
       "username": "sylviagonzales",
       "firstName": "Sylvia",
       "lastName": "Gonzales",
@@ -1117,7 +1117,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 94,
+      "id": "94",
       "username": "aprilgordon",
       "firstName": "April",
       "lastName": "Gordon",
@@ -1129,7 +1129,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 95,
+      "id": "95",
       "username": "staceygarza",
       "firstName": "Stacey",
       "lastName": "Garza",
@@ -1141,7 +1141,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 96,
+      "id": "96",
       "username": "karenmccarty",
       "firstName": "Karen",
       "lastName": "Mccarty",
@@ -1153,7 +1153,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 97,
+      "id": "97",
       "username": "williamochoa",
       "firstName": "William",
       "lastName": "Ochoa",
@@ -1165,7 +1165,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 98,
+      "id": "98",
       "username": "alexanderwashington",
       "firstName": "Alexander",
       "lastName": "Washington",
@@ -1177,7 +1177,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 99,
+      "id": "99",
       "username": "patrickhubbard",
       "firstName": "Patrick",
       "lastName": "Hubbard",
@@ -1189,7 +1189,7 @@
       "description": "aku adalah karyawan baru"
     },
     {
-      "id": 100,
+      "id": "100",
       "username": "davidyates",
       "firstName": "David",
       "lastName": "Yates",

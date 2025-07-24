@@ -39,8 +39,8 @@ export class EmployeeService {
   }
 
   getById(id: string): EmployeeDto | undefined {
-    const all = this.getAllEmployee();
-    return all.find(e => e.id === id);
+    const employees = this.getAllEmployee();
+    return employees.find(emplpoyee => emplpoyee.id === id);
   }
 
   create(data: EmployeeDto): void {
@@ -49,7 +49,7 @@ export class EmployeeService {
     this.refreshStoreEmployee(all);
   }
   
-  update(id: string, data: EmployeeDto): void {
+  update(data: EmployeeDto, id: string): void {
     let all = this.getAllEmployee();
     const index = all.findIndex(e => e.id === id);
     if (index !== -1) {

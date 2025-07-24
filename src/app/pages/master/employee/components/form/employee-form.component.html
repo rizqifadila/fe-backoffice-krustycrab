@@ -1,1 +1,210 @@
-<p>employee-form works!</p>
+<div class="d-flex flex-column mh-97 py-4">
+  <div class="col-12 border rounded-top">
+    <app-breadcrumb [forOf]="breadcrumbs"></app-breadcrumb>
+  </div>
+  <div class="col-12 border border-top-0">
+    <div class="d-flex flex-column">
+      <div class="col-12 d-flex flex-column mt-4 px-3">
+        <label class="ff-poppins fs-24 fw-600 tc-primary ml-3 ml-md-4">
+          Form {{ id ? 'Update' : 'Create' }} Data Employee
+        </label>
+        <span>
+          Please complete the following form
+        </span>
+      </div>
+
+      <div class="col-12 px-3 text-start text-md-end mt-2 mt-lg-0">
+        <div class="d-inline-flex px-2 py-1 border-bottom">
+          <i class="bi bi-lightbulb me-1 fs-12 text-warning fw-600"></i>
+          <span class="text-muted fw-500 fs-12">Tip: Fields marked with a red asterisk are required.</span>
+        </div>
+      </div>
+
+      <!-- @if (errorAlert && errorAlert.statusCode) {
+        <div class="col-12 px-3">
+          <app-alert-error [error]="errorAlert"></app-alert-error>
+        </div>
+      } -->
+
+      <div class="col-12 px-3 mt-5">
+        <form [formGroup]="employeeForm" (ngSubmit)="submitForm()">
+          <div class="row mb-3">
+            <div class="col-lg-3">
+              <label for="username" class="ff-poppins fs-14 fw-400 text-muted ms-1">Username <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-9">
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                placeholder="Fill in username"
+                formControlName="username"
+                name="username"
+              >
+              <app-rules-input [control]="employeeForm.get('username')" field="username"></app-rules-input>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-3">
+              <label for="firstName" class="ff-poppins fs-14 fw-400 text-muted ms-1">First Name <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-9">
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                placeholder="Fill in firstname"
+                formControlName="firstName"
+                name="firstName"
+              >
+              <app-rules-input [control]="employeeForm.get('firstName')" field="first name"></app-rules-input>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-3">
+              <label for="lastName" class="ff-poppins fs-14 fw-400 text-muted ms-1">Last Name <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-9">
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                placeholder="Fill in lastName"
+                formControlName="lastName"
+                name="lastName"
+              >
+              <app-rules-input [control]="employeeForm.get('lastName')" field="last name"></app-rules-input>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-3">
+              <label for="email" class="ff-poppins fs-14 fw-400 text-muted ms-1">Email <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-9">
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                placeholder="Fill in email"
+                formControlName="email"
+                name="email"
+              >
+              <app-rules-input [control]="employeeForm.get('email')" field="email"></app-rules-input>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-3">
+              <label for="birthDate" class="ff-poppins fs-14 fw-400 text-muted ms-1">BirthDate <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-9">
+              <input
+                type="date"
+                class="form-control"
+                id="birthDate"
+                placeholder="Fill in birthDate"
+                formControlName="birthDate"
+                name="birthDate"
+                [max]="today"
+              >
+              <app-rules-input [control]="employeeForm.get('birthDate')" field="birthDate"></app-rules-input>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-3">
+              <label for="basicSalary" class="ff-poppins fs-14 fw-400 text-muted ms-1">Salary <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-9">
+              <input
+                type="text"
+                class="form-control"
+                id="basicSalary"
+                placeholder="Fill in basic salary"
+                formControlName="basicSalary"
+                name="basicSalary"
+                [currencyMask]="customCurrencyMaskConfig"
+              >
+              <app-rules-input [control]="employeeForm.get('basicSalary')" field="salary"></app-rules-input>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-3">
+              <label for="status" class="ff-poppins fs-14 fw-400 text-muted ms-1">Status <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-9">
+              <ng-select
+                [items]="employeeStatusOptions"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select or search status"
+                [searchable]="true"
+                formControlName="status"
+                [clearable]="true">
+              </ng-select>
+              <app-rules-input [control]="employeeForm.get('status')" field="status"></app-rules-input>
+            </div>
+          </div>
+          
+          <div class="row mb-3">
+            <div class="col-lg-3">
+              <label for="group" class="ff-poppins fs-14 fw-400 text-muted ms-1">Group <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-9">
+              <ng-select
+                [items]="employeeGroupOptions"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select or search group"
+                [searchable]="true"
+                formControlName="group"
+                [clearable]="true">
+              </ng-select>
+              <app-rules-input [control]="employeeForm.get('group')" field="group"></app-rules-input>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-3">
+              <label for="description" class="ff-poppins fs-14 fw-400 text-muted ms-1">Description <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-lg-9">
+              <textarea
+                class="form-control"
+                id="description"
+                formControlName="description"
+                row="5"
+                placeholder="Fill in description"
+              ></textarea>
+              <app-rules-input [control]="employeeForm.get('description')" field="description"></app-rules-input>
+            </div>
+          </div>
+
+          <div class="mb-3 d-flex flex-row-reverse">  
+            <button
+              type="submit"
+              class="button-primary rounded"
+            >
+              Save
+            </button>
+
+            <a routerLink="/master/employee" class="button-back cursor-pointer ff-poppins fs-14 fw-600 me-3 align-self-end">
+              Back to list
+            </a>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <app-dialog-confirmation
+    #dialogConfirmation
+    (onConfirm)="onModalSuccessConfirm($event)"
+  ></app-dialog-confirmation>
+  <app-loading *ngIf="isLoading"></app-loading>
+</div>
