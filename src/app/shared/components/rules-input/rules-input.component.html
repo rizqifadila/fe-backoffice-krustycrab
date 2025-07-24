@@ -1,0 +1,9 @@
+@if (hasError()) {
+  <div class="form-text text-danger">
+    @for (key of getErrors(); track $index) {
+      <span class="d-block ms-2">
+          {{ getMessage(key) }}
+      </span>  
+    }
+  </div>
+}

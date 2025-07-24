@@ -1,0 +1,75 @@
+<div class="layout-container">
+  <div class="header">
+    <span class="ff-poppins fw-600 fs-24 text-white">
+      Backoffice - Login 
+    </span>
+  </div>
+
+  <div class="content position-relative">
+    <div class="card-login d-flex flex-column">
+      <div class="col-11 col-md-6 col-lg-4 mx-auto rounded p-3">
+        <div class="d-flex flex-column justify-content-center">
+          <div class="col-11 col-md-9 mx-auto mb-2">
+            <div class="logo-with-title justify-content-center">
+              <img src="assets/images/user.png" alt="logo-company" class="logo">
+              <div class="d-flex flex-column">
+                <span class="ff-open-poppins fw-400 fs-32 text-black">
+                  <b>Krusty</b> Krab
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-11 col-md-9 mx-auto d-flex flex-column mb-4">
+            <span class="ff-poppins fw-600 fs-28 text-center">
+              Welcome Back
+            </span>
+            <span class="fw-600 fs-16 tc-primary text-center mt-1">
+              Enter your account
+            </span>
+          </div>
+
+          @if (errorAlert && errorAlert.statusCode) {
+            <app-alert-error [error]="errorAlert"></app-alert-error>
+          }
+    
+          <div class="col-12 mt-3">
+            <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+              <div class="mb-3">
+                <label for="username" class="form-label ps-1">Username</label>
+                <input type="text" formControlName="username" class="form-control rounded-pill" id="username" placeholder="username">
+                <app-rules-input [control]="loginForm.get('username')" field="username"></app-rules-input>
+              </div>
+    
+              <div class="mb-3 d-flex flex-column">
+                <label for="password" class="form-label ps-1">Password</label>
+                <div class="d-flex position-relative">
+                  <input [type]="getInputType()" formControlName="password" class="form-control rounded-pill" id="password" placeholder="password">
+                  
+                  <div class="d-flex align-items-top h-100 position-absolute end-0 pe-3">
+                    <button type="button" class="btn-ghost" (click)="toggleShowPassword()">
+                      <i *ngIf="!showPassword" class="bi bi-eye-fill"></i>
+                      <i *ngIf="showPassword" class="bi bi-eye-slash-fill"></i>
+                    </button>
+                  </div>
+                </div>
+                <app-rules-input [control]="loginForm.get('password')" field="password"></app-rules-input>
+              </div>
+    
+              <button class="button-primary w-100 rounded-pill">
+                Login
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="ff-inter fw-400 fs-14 text-center">
+     © 2025 <b class="tc-primary">Krusty Krab</b> All rights reserved. | Version <b class="tc-primary">1.0.0</b>
+    </span>
+  </div>
+
+  <app-loading *ngIf="isLoading"></app-loading>
+</div>

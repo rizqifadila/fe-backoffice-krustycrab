@@ -29,12 +29,22 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/@ng-select/ng-select/themes/default.theme.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -62,6 +72,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4700
+          },
           "configurations": {
             "production": {
               "buildTarget": "fe-backoffice:build:production"

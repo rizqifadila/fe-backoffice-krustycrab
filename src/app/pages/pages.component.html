@@ -1,0 +1,196 @@
+<div class="mobile-sidebar">
+    <nav class="navbar navbar-dark bg-color-primary">
+        <div class="container-fluid d-flex flex-row justify-content-between">
+            <a routerLink="#">
+                <span class="description-header ff-inter fw-700">
+                    MSales-App
+                </span>
+            </a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="main bg-color-primary pt-2 pb-3" id="menu">
+           @for (menu of menus; track $index) {
+                @if (menu.children && menu.children.length > 0) {
+                    <div class="list-item-parent"
+                        aria-current="page"
+                        routerLinkActive="active"
+                        #rla{{menu.code}}="routerLinkActive"
+                    >
+                        <a href="#" class="collapsed d-flex flex-row align-items-center w-100" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+menu.code" aria-expanded="false" [attr.aria-controls]="menu.code">
+                            <i *ngIf="menu.icon; else emptyIcon" class="{{ menu.icon }} icon"></i>
+                            <ng-template #emptyIcon>
+                                <i class="bi bi-receipt icon"></i>
+                            </ng-template>
+                            <span class="description">
+                                {{menu.name}}
+                            </span>
+                            <i class="bi bi-chevron-right ms-auto fs-12 icon"></i>
+                        </a>
+                        <ul [id]="menu.code" class="sidebar-dropdown list-unstyled collapse ps-3 pt-2" data-bs-parent="#menu">
+                            <li class="sidebar-item" *ngFor="let child of menu.children">
+                                <div class="list-item-child"
+                                    [routerLink]="child.path"
+                                    aria-current="page"
+                                    routerLinkActive="active"
+                                    #rla{{child.code}}="routerLinkActive"
+                                    [routerLinkActiveOptions]="{ exact: false }"
+                                >
+                                    <a [routerLink]="child.path">
+                                        <span class="description">
+                                            {{ child.name }}
+                                        </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                } @else {
+                    <div class="list-item-parent"
+                        [routerLink]="menu.path"
+                        aria-current="page"
+                        routerLinkActive="active"                                
+                        #rla{{menu.name}}="routerLinkActive"                                
+                    >
+                        <a [routerLink]="menu.path" class="collapsed d-flex flex-row align-items-center w-100">
+                            <i *ngIf="menu.icon; else emptyIcon" class="{{ menu.icon }} icon"></i>
+                            <ng-template #emptyIcon>
+                                <i class="bi bi-receipt icon"></i>
+                            </ng-template>
+                            <span class="description">
+                                {{menu.name}}
+                            </span>
+                        </a>
+                    </div>
+                }
+            }
+            
+            <div class="list-item-parent mt-auto cursor-pointer">
+                <a (click)="handleLogout()" class="collapsed d-flex flex-row align-items-center w-100">
+                    <i class="bi bi-box-arrow-left icon"></i>
+                    <span class="description">
+                        Logout
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <app-loading *ngIf="isLoading"></app-loading>
+</div>
+
+<div class="wrapper-container">
+    <div class="sidebar {{ toggle ? 'hide' : '' }} position-relative">
+        <div id="menu-button" class="{{ toggle ? 'hide' : '' }}">
+            <input type="checkbox" id="menu-checkbox" #menuCheckbox>
+            <label for="menu-checkbox" id="menu-label" (click)="toggleMenu()">
+                <div id="button-circle">
+                    <i class="bi bi-chevron-left icon"></i>
+                </div>
+            </label>
+        </div>
+        <div class="header fs-14">
+            <div class="col-12 list-item d-flex {{ toggle ? 'flex-column mt-3': 'flex-row' }} justify-content-center align-items-center">
+                <div class="{{ toggle ? 'col-12 text-center' : 'col-3' }}">
+                    <img [src]="avatar" alt="avatar-user" class="avatar" />
+                </div>
+                <div class="col-9 ps-2 d-flex flex-column {{ toggle ? 'd-none' : 'd-block' }}">
+                    @if (user && user.username) {
+                        <span class="description-header ff-inter fw-700">
+                            {{ user.username }}
+                        </span>
+                    } @else {
+                        <span class="description-header ff-inter fw-700">
+                            {{ user.username.length > 20 ? (user.username | slice:0:20)+"..." : user.username }}
+                        </span>
+                    }
+                    <div class="d-inline-flex flex-row mt-1 align-items-center">
+                        <div class="online"></div>
+                        <span class="fw-400 fs-10 text-white ms-1">
+                            {{ user && user.position ? user.position : 'Guest' }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main mt-4 d-flex flex-column h-100" id="menu">
+            @for (menu of menus; track $index) {
+                @if (menu.children && menu.children.length > 0) {
+                    <div class="list-item-parent"
+                        aria-current="page"
+                        routerLinkActive="active"
+                        #rla{{menu.code}}="routerLinkActive"
+                        (click)="toggle ? toggleMenu() : undefined"
+                    >
+                        <a href="#" class="collapsed d-flex flex-row align-items-center w-100" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+menu.code" aria-expanded="false" [attr.aria-controls]="menu.code">
+                            <i *ngIf="menu.icon; else emptyIcon" class="{{ menu.icon }} icon"></i>
+                            <ng-template #emptyIcon>
+                                <i class="bi bi-receipt icon"></i>
+                            </ng-template>
+                            <span class="description">
+                                {{menu.name}}
+                            </span>
+                            <i class="bi bi-chevron-right ms-auto fs-12 icon"></i>
+                        </a>
+                        <ul [id]="menu.code" class="sidebar-dropdown list-unstyled collapse ps-3 pt-2" data-bs-parent="#menu">
+                            <li class="sidebar-item" *ngFor="let child of menu.children">
+                                <div class="list-item-child"
+                                    [routerLink]="child.path"
+                                    aria-current="page"
+                                    routerLinkActive="active"
+                                    #rla{{child.code}}="routerLinkActive"
+                                    [routerLinkActiveOptions]="{ exact: false }"
+                                >
+                                    <a [routerLink]="child.path">
+                                        <span class="description">
+                                            {{ child.name }}
+                                        </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                } @else {
+                    <div class="list-item-parent"
+                        [routerLink]="menu.path"
+                        aria-current="page"
+                        routerLinkActive="active"                                
+                        #rla{{menu.name}}="routerLinkActive"              
+                    >
+                        <a [routerLink]="menu.path" class="collapsed d-flex flex-row align-items-center w-100">
+                            <i *ngIf="menu.icon; else emptyIcon" class="{{ menu.icon }} icon"></i>
+                            <ng-template #emptyIcon>
+                                <i class="bi bi-receipt icon"></i>
+                            </ng-template>
+                            <span class="description">
+                                {{menu.name}}
+                            </span>
+                        </a>
+                    </div>
+                }
+            }
+
+            <div class="list-item-parent mt-auto cursor-pointer">
+                <a (click)="handleLogout()"  class="collapsed d-flex flex-row align-items-center w-100">
+                    <i class="bi bi-box-arrow-left icon"></i>
+                    <span class="description">
+                        Logout
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="d-flex flex-column">
+            <div class="col-11 mx-auto">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+
+    <app-loading *ngIf="isLoading"></app-loading>
+</div>

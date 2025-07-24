@@ -1,0 +1,15 @@
+@if (error && error.statusCode) {
+  <div
+      class="p-3 d-flex flex-row" 
+      [ngClass]="isFatalError ? 'bg-soft-red border-y-red' : 'bg-soft-yellow border-y-yellow'"
+  >
+      <i class="fas fa-info-circle mr-2 align-self-center"
+          [ngClass]="isFatalError ? 'text-red' : 'text-yellow'"
+      ></i>
+      <span class="fw-600"
+          [ngClass]="isFatalError ? 'text-red' : 'text-yellow'"
+      >
+          {{ error && error.message ? error.message : '' }}
+      </span>
+  </div>
+}

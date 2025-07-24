@@ -1,3 +1,53 @@
 import { Routes } from '@angular/router';
+import { PagesComponent } from './pages/pages.component';
+import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/login/login.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { EmployeeListComponent } from './pages/master/employee/components/list/employee-list/employee-list.component';
+import { EmployeeFormComponent } from './pages/master/employee/components/form/employee-form/employee-form.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { authGuard } from './shared/guard/auth.guard';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+   {
+    path: 'auth',
+    component: AuthComponent,
+    children: [
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: 'login', component: LoginComponent },
+    ],
+  },
+  {
+    path: '',
+    component: PagesComponent,
+    canActivateChild: [authGuard],
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'master', redirectTo: 'home' },
+      {
+        path: 'master',
+        children: [
+          {
+            path: 'employee',
+            children: [
+              {
+                path: '',
+                component: EmployeeListComponent,
+              },
+              {
+                path: 'form',
+                component: EmployeeFormComponent,
+              },
+              {
+                path: 'form/:id',
+                component: EmployeeFormComponent,
+              },
+            ]
+          },
+        ]
+      }
+    ]
+  },
+  { path: '**', component: NotFoundComponent }
+];
