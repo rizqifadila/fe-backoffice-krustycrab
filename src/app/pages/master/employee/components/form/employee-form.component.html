@@ -1,6 +1,6 @@
 <div class="d-flex flex-column mh-97 py-4">
   <div class="col-12 border rounded-top">
-    <app-breadcrumb [forOf]="breadcrumbs"></app-breadcrumb>
+    <app-breadcrumb [forOf]="breadcrumbs" [latestParams]="backQueryParams"></app-breadcrumb>
   </div>
   <div class="col-12 border border-top-0">
     <div class="d-flex flex-column">
@@ -19,12 +19,6 @@
           <span class="text-muted fw-500 fs-12">Tip: Fields marked with a red asterisk are required.</span>
         </div>
       </div>
-
-      <!-- @if (errorAlert && errorAlert.statusCode) {
-        <div class="col-12 px-3">
-          <app-alert-error [error]="errorAlert"></app-alert-error>
-        </div>
-      } -->
 
       <div class="col-12 px-3 mt-5">
         <form [formGroup]="employeeForm" (ngSubmit)="submitForm()">
@@ -192,7 +186,7 @@
               Save
             </button>
 
-            <a routerLink="/master/employee" class="button-back cursor-pointer ff-poppins fs-14 fw-600 me-3 align-self-end">
+            <a routerLink="/master/employee" [queryParams]="backQueryParams" class="button-back cursor-pointer ff-poppins fs-14 fw-600 me-3 align-self-end">
               Back to list
             </a>
 

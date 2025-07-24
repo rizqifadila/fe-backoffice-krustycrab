@@ -79,6 +79,12 @@ export class EmployeeListComponent implements OnInit {
     'BE': 'Backend Team',
     'PM': 'Product Managers',
     'DA': 'Data Analysts',
+    'MB': 'Mobile Dev',
+    'QAE': 'QA Engineers',
+    'UI/UX': 'UI/UX Designers',
+    'DS': 'DevOps Squad',
+    'ST': 'Security Team',
+    'IT': 'Infra Team',
   };
 
   // __________________________________________ onLoad Function

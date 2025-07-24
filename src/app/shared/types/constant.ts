@@ -107,7 +107,13 @@ export const EmployeeGroupOptions = [
   { value: 'FE', label: 'Frontend Team' },
   { value: 'BE', label: 'Backend Team' },
   { value: 'PM', label: 'Product Managers' },
-  { value: 'DA', label: 'Data Analysts' }
+  { value: 'DA', label: 'Data Analysts' },
+  { value: 'MD', label: 'Mobile Dev' },
+  { value: 'QAE', label: 'QA Engineers' },
+  { value: 'UI/UX', label: 'UI/UX Designers' },
+  { value: 'DS', label: 'DevOps Squad' },
+  { value: 'ST', label: 'Security Team' },
+  { value: 'IT', label: 'Infra Team' },
 ];
 
 export const customCurrencyMask = {

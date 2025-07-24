@@ -69,6 +69,7 @@ export class EmployeeFormComponent implements OnInit {
 
   employeeGroupOptions: Array<FilterSelectDto> = EmployeeGroupOptions;
   isEmployeeGroupLoading: boolean = false;
+  backQueryParams: Params = {};
 
   // __________________________________________ onLoad Function
   ngOnInit() {
@@ -90,6 +91,8 @@ export class EmployeeFormComponent implements OnInit {
         }, 500);
       },
     });
+
+    this.backQueryParams = this.activatedRoute.snapshot.queryParams;
   }
 
   buildForm(): void {
