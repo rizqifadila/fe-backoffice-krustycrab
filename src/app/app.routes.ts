@@ -3,10 +3,10 @@ import { PagesComponent } from './pages/pages.component';
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { EmployeeListComponent } from './pages/master/employee/components/list/employee-list/employee-list.component';
-import { EmployeeFormComponent } from './pages/master/employee/components/form/employee-form/employee-form.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { authGuard } from './shared/guard/auth.guard';
+import { EmployeeFormComponent } from './pages/master/employee/components/form/employee-form.component';
+import { EmployeeListComponent } from './pages/master/employee/components/list/employee-list.component';
 
 export const routes: Routes = [
    {

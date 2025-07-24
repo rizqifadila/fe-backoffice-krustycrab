@@ -1,20 +1,19 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, ViewChild } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { AlertErrorComponent } from '../../../../../../shared/components/alert-error/alert-error.component';
-import { BreadcrumbComponent } from '../../../../../../shared/components/breadcrumb/breadcrumb.component';
-import { LoadingComponent } from '../../../../../../shared/components/loading/loading.component';
-import { Title } from '@angular/platform-browser';
-import { Breadcrumb } from '../../../../../../shared/components/breadcrumb/model/breadcrumb.model';
-import { ErrorAlertDto, FilterSelectDto, Paging } from '../../../../../../shared/interface/global.model';
-import { EmployeeDto } from '../../../model/employee.model';
-import { EmployeeService } from '../../../service/employee.service';
-import { EmployeeGroupOptions, EmployeeStatusOptions, itemsRowPerPage, selectedRowPerPage } from '../../../../../../shared/types/constant';
-import { debounceTime, distinctUntilChanged } from 'rxjs';
-import { RouterLink, Router, ActivatedRoute, Params } from '@angular/router';
-import { NgSelectModule } from '@ng-select/ng-select';
-import { DialogConfirmationComponent } from '../../../../../../shared/components/dialogs/dialog-confirmation/dialog-confirmation.component';
-import { EmployeeGroupEnum } from '../../../../../../shared/types/enum';
+import { CommonModule } from "@angular/common";
+import { Component, OnInit, inject, ViewChild } from "@angular/core";
+import { ReactiveFormsModule, FormControl } from "@angular/forms";
+import { Title } from "@angular/platform-browser";
+import { RouterLink, Router, ActivatedRoute, Params } from "@angular/router";
+import { NgSelectModule } from "@ng-select/ng-select";
+import { debounceTime, distinctUntilChanged } from "rxjs";
+import { AlertErrorComponent } from "../../../../../shared/components/alert-error/alert-error.component";
+import { BreadcrumbComponent } from "../../../../../shared/components/breadcrumb/breadcrumb.component";
+import { Breadcrumb } from "../../../../../shared/components/breadcrumb/model/breadcrumb.model";
+import { DialogConfirmationComponent } from "../../../../../shared/components/dialogs/dialog-confirmation/dialog-confirmation.component";
+import { LoadingComponent } from "../../../../../shared/components/loading/loading.component";
+import { FilterSelectDto, Paging, ErrorAlertDto } from "../../../../../shared/interface/global.model";
+import { EmployeeStatusOptions, EmployeeGroupOptions, itemsRowPerPage, selectedRowPerPage } from "../../../../../shared/types/constant";
+import { EmployeeDto } from "../../model/employee.model";
+import { EmployeeService } from "../../service/employee.service";
 
 @Component({
   selector: 'app-employee-list',
