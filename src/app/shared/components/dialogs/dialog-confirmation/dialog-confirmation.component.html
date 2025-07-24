@@ -1,0 +1,43 @@
+
+<dialog #dialogConfirmation id="dialogConfirmation">
+  <div class="wrapper-dialog-confirmation mh-100 d-flex flex-column justify-content-center align-items-center">
+    <div class="col-lg-5 col-xl-4 col-md-8 col-11">
+      <div class="d-flex flex-column rounded bg-light p-3">
+        <div class="col-12 text-end">
+            <a aria-label="Close" class="cursor-pointer text-black" (click)="confirmDialogue(false)">
+              <i class="bi bi-x-lg"></i>
+            </a>
+        </div>
+
+        <div class="col-12 text-center mb-2">
+          <span class="ff-poppins fs-20 fw-600 tc-primary">
+            <i class="bi bi-exclamation-triangle me-2"></i> {{ title }}
+          </span>
+        </div>
+
+        <div class="col-12">
+          <hr style="margin-top: unset; margin-bottom: 1rem;" />
+        </div>
+        <div class="col-12 mb-5 text-center">
+          <span class="ff-poppins fs-16 fw-400 text-black">
+            {{ message }}
+          </span>
+        </div>
+
+        <div class="col-12 d-flex flex-column flex-md-row justify-content-end">
+          @if (showCancelButton) {
+            <a (click)="confirmDialogue(false)" class="button-back cursor-pointer ff-poppins fs-14 fw-600 align-self-center order-1 order-md-0 me-0 me-md-2">
+              Cancel
+            </a>
+          }
+          <button
+            (click)="confirmDialogue(true)"
+            class="button-primary rounded px-5 order-0 order-md-1 mb-2 mb-md-0"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
