@@ -1,5 +1,6 @@
 import { ValidationErrors } from "@angular/forms";
 import { MenuDto, UserDto } from "../interface/global.model";
+import { NgxCurrencyInputMode } from "ngx-currency";
 
 export const DummyMenus: MenuDto[] = [
   {
@@ -108,3 +109,18 @@ export const EmployeeGroupOptions = [
   { value: 'PM', label: 'Product Managers' },
   { value: 'DA', label: 'Data Analysts' }
 ];
+
+export const customCurrencyMask = {
+    align: "left",
+    allowNegative: true,
+    allowZero: true,
+    decimal: ".", 
+    precision: 0,
+    prefix: "Rp. ",
+    suffix: "",
+    thousands: ",", 
+    nullable: false,
+    min: null,
+    max: null,
+    inputMode: NgxCurrencyInputMode.Financial
+};
