@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { RulesInputComponent } from '../../shared/components/rules-input/rules-input.component';
 import { AlertErrorComponent } from '../../shared/components/alert-error/alert-error.component';
 import { ErrorAlertDto } from '../../shared/interface/global.model';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ import { ErrorAlertDto } from '../../shared/interface/global.model';
 })
 export class LoginComponent implements OnInit {
 
+  title = inject(Title);
   authService = inject(AuthService);
   router = inject(Router);
 
@@ -32,6 +34,7 @@ export class LoginComponent implements OnInit {
 
   // _______________________________________________________ onLoad Function
   ngOnInit(): void {
+    this.title.setTitle(`Backoffice Krusty Crab - Login`);
     const isSessionInvalid = localStorage.getItem('BACKOFFICE_INVALID_SESSION');
     if (isSessionInvalid) {
       this.errorAlert = {

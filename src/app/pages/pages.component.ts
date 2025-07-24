@@ -5,6 +5,7 @@ import { MenuDto, UserDto } from '../shared/interface/global.model';
 import { DummyMenus, DummyUsers } from '../shared/types/constant';
 import { LoadingComponent } from '../shared/components/loading/loading.component';
 import { AuthService } from '../shared/service/auth.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pages',
@@ -20,6 +21,7 @@ import { AuthService } from '../shared/service/auth.service';
 })
 export class PagesComponent implements OnInit {
 
+  title = inject(Title);
   router = inject(Router);
   renderer = inject(Renderer2);
   authService = inject(AuthService);
@@ -35,6 +37,7 @@ export class PagesComponent implements OnInit {
 
   // __________________________________________ onLoad function
   ngOnInit(): void {
+    this.title.setTitle(`Backoffice Krusty Crab - Dashoard`);
     this.authService.user$.subscribe(user => this.user = user);
     this.menus = DummyMenus;
   }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
+
+  title = inject(Title);
+  
+  ngOnInit(): void {
+    this.title.setTitle(`Backoffice Krusty Crab - Dashboard`);
+    
+  }
 
 }
