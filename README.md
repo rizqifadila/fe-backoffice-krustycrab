@@ -1,4 +1,4 @@
-# Express Pagination API
+# Deskripsi Proyek
 Ini adalah aplikasi backoffice menggunakan stack angular yang mendemonstrasikan user-login, menampilkan list data, pembuatan form input, mengimplementasikan pengambilan data dengan pagination, pencarian, dan penyortiran menggunakan file data dummy yang disimpan di local storage lalu diolah semua proses create, read, update, delete, filtering, serta pagination dari sisi frontend.
 
 ## Fitur
