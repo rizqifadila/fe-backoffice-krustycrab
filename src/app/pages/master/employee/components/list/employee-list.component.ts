@@ -252,12 +252,7 @@ export class EmployeeListComponent implements OnInit {
        setTimeout(() => {
         this.isLoading = false;
         this.employeeService.delete(this.selectedEmployee.id);
-        if (this.pagingData && this.pagingData.totalPages > 1) {
-          this.loadData();
-        } else {
-          this.params['page'] = 1;
-          this.navigate();
-        }
+        this.loadData();
       }, 500);
     }
   }
