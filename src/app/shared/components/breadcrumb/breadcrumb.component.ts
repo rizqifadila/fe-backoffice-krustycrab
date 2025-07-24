@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Params, RouterLink } from '@angular/router';
 import { Breadcrumb } from './model/breadcrumb.model';
 
 @Component({
@@ -19,6 +19,7 @@ export class BreadcrumbComponent implements OnInit {
 	@Input() link1!: Breadcrumb;
 	@Input() link2!: Breadcrumb;
 	@Input() link3!: Breadcrumb;
+	@Input() latestParams?: Params = {};
 
   allLink: Breadcrumb[] = [];
   

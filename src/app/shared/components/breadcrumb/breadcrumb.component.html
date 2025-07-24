@@ -9,7 +9,7 @@
       <li class="breadcrumb-item {{ link.active ? 'active' : '' }}">
         @if (!link.disabled) {
           @if (!link.active) {
-            <a routerLink="{{ link.routerLink }}" class="text-muted fs-16">{{ link.title }}</a>
+            <a routerLink="{{ link.routerLink }}" [queryParams]="latestParams" class="text-muted fs-16">{{ link.title }}</a>
           }
           <a class="tc-primary fs-16 fw-bold">{{ link.active ? link.title : '' }}</a>
         } @else {
